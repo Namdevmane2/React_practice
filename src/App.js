@@ -18,6 +18,7 @@ function App() {
   return (
     <div>
       <h2>Working with events and list </h2>
+      <input type="text" name="" id="" placeholder="Post Your Thought here" />
       <input type="button" value="Say Hello" onClick={addNewHello} />
       {list.map((item) => {
         return (
