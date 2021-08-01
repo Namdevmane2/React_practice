@@ -3,11 +3,16 @@ import "./App.css";
 import { useState } from "react";
 
 function App() {
-  let list = ["hello", "Hero"];
+  // declare variable using hooks .
+  // Array Destructuring :: React Hooks
 
+  const [list, selList] = useState([]);
+
+  // Arrow Function
   const addNewHello = () => {
-    alert("add new Hello logic program here.....! ");
-    list.push("hello");
+    //Array Clone
+    const newList = [...list, "Hello World"];
+    selList(newList);
     console.log(list);
   };
   return (
@@ -15,7 +20,14 @@ function App() {
       <h2>Working with events and list </h2>
       <input type="button" value="Say Hello" onClick={addNewHello} />
       {list.map((item) => {
-        return <li> {item} </li>;
+        return (
+          <h3>
+            {" "}
+            {item}. Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+            Pariatur non similique provident ea eius ad nemo blanditiis dolorum
+            architecto eos.{" "}
+          </h3>
+        );
       })}
     </div>
   );
