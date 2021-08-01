@@ -3,33 +3,19 @@ import "./App.css";
 import { useState } from "react";
 
 function App() {
-  // declare variable using hooks .
-  // Array Destructuring :: React Hooks
-
-  const [list, selList] = useState([]);
-
-  // Arrow Function
-  const addNewHello = () => {
-    //Array Clone
-    const newList = [...list, "Hello World"];
-    selList(newList);
-    console.log(list);
-  };
+  let [name] = useState("CDAC");
+  let [counter] = useState(100);
+  let [active] = useState(false);
+  let [list] = useState(["delhi", "mumbai"]);
+  let [std1] = useState({ name: "namdev" });
   return (
     <div>
-      <h2>Working with events and list </h2>
-      <input type="text" name="" id="" placeholder="Post Your Thought here" />
-      <input type="button" value="Say Hello" onClick={addNewHello} />
-      {list.map((item) => {
-        return (
-          <h3>
-            {" "}
-            {item}. Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-            Pariatur non similique provident ea eius ad nemo blanditiis dolorum
-            architecto eos.{" "}
-          </h3>
-        );
-      })}
+      <h2>Learning to Declar StateFull variable</h2>
+      <h2>String :: {name} </h2>
+      <h2>Number :: {counter} </h2>
+      <h2>List :: {list} </h2>
+      <h2>object :: {JSON.stringify(std1)} </h2>
+      <h2>object :: {std1.name} </h2>
     </div>
   );
 }
